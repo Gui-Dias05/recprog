@@ -46,7 +46,9 @@
                 $stmt->bindValue(':iv_l_idLivro', $this->getIdL());
                 $stmt->bindValue(':iv_quantidade', $this->getQuant());
                 $stmt->bindValue(':iv_valor_total_item', $this->getTotal());
+
                 return $stmt->execute();
+                
             
         }
 
@@ -56,6 +58,18 @@
             $stmt->bindValue(':iv_v_idVenda', $iv_v_idVenda);
             $stmt->bindValue(':iv_l_idLivro', $iv_l_idLivro);
             return $stmt->execute();
+        }
+
+        public function adicionarItem($iv_v_idVenda, $iv_l_idLivro){
+
+            $pdo = Conexao::getInstance();
+            $stmt = $pdo->prepare('INSERT INTO `recuperacaoav01`.`Item_venda` (`iv_v_idVenda`, `iv_l_idLivro`, `iv_quantidade`, `iv_valor_total_item`) VALUES (:iv_v_idVenda, :iv_l_idLivro, :iv_quantidade, :iv_valor_total_item)');
+                $stmt->bindValue(':iv_v_idVenda', $this->getIdV());
+                $stmt->bindValue(':iv_l_idLivro', $this->getIdL());
+                $stmt->bindValue(':iv_quantidade', $this->getQuant());
+                $stmt->bindValue(':iv_valor_total_item', $this->getTotal());
+                $stmt = $pdo->prepare('UPDATE `recuperacaoav01`.`Venda` (`iv_v_idVenda`, `iv_l_idLivro`, `iv_quantidade`, `iv_valor_total_item`) VALUES (:iv_v_idVenda, :iv_l_idLivro, :iv_quantidade, :iv_valor_total_item)');
+                return $stmt->execute();
         }
 
     }

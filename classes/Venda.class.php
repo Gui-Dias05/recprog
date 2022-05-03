@@ -96,6 +96,12 @@
                 return false;
 
         }
+        
+        public function listarVenda($v_idVenda){
+            require_once("conf/Conexao.php");
+            $pdo = Conexao::getInstance();
+            $stmt = $pdo->prepare('UPDATE `recuperacaoav01`.`Venda` (`iv_v_idVenda`, `iv_l_idLivro`, `iv_quantidade`, `iv_valor_total_item`) VALUES (:iv_v_idVenda, :iv_l_idLivro, :iv_quantidade, :iv_valor_total_item)');
+        }
     }
 
     ?>
