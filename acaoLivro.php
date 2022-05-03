@@ -31,7 +31,6 @@
             header("location:indexLivro.php");        
     }
 
-//Consultar dados
 function buscarDados($l_idLivro){
     $pdo = Conexao::getInstance();
     $consulta = $pdo->query("SELECT * FROM Livro WHERE l_idLivro = $l_idLivro");
@@ -44,7 +43,6 @@ function buscarDados($l_idLivro){
         $dados['l_preco'] = $linha['l_preco'];
 
     }
-    //var_dump($dados);
     return $dados;
 }
     

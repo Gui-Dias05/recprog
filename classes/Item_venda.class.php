@@ -58,23 +58,6 @@
             return $stmt->execute();
         }
 
-        // public function buscar($id){
-        //     require_once("conf/Conexao.php");
-
-        //     $conexao = Conexao::getInstance();
-
-        //     $query = 'SELECT * FROM Cliente';
-        //     if($id > 0){
-        //         $query .= ' WHERE c_idCliente = :Id';
-        //         $stmt->bindParam(':Id', $id);
-        //     }
-        //         $stmt = $conexao->prepare($query);
-        //         if($stmt->execute())
-        //             return $stmt->fetchAll();
-        
-        //         return false;
-
-        // }
     }
 
     ?>

@@ -14,7 +14,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php $title ?></title>
-    <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script>
         function excluir(url){
@@ -79,8 +78,10 @@
         <tr><td><?php echo $linha['a_idAutor'];?></td>
             <td><?php echo $linha['a_nome'];?></td>
             <td><?php echo $linha['a_sobrenome'];?></td>
-            <td><a href='cadAutor.php?acao=editar&a_idAutor=<?php echo $linha['a_idAutor'];?>'> <img src="img/edit.svg" style="width: 1.8vw;"></a></td>
-            <td><?php echo " <a href=javascript:excluir('acaoAutor.php?acao=excluir&a_idAutor={$linha['a_idAutor']}')>";?><img src="img/delete.svg" style="width: 1.5vw;"></a></td>
+            <td><a href='cadAutor.php?acao=editar&a_idAutor=<?php echo $linha['a_idAutor'];?>'> <img src="img/editar.png" style="width: 2.5
+            
+            vw;"></a></td>
+            <td><?php echo " <a href=javascript:excluir('acaoAutor.php?acao=excluir&a_idAutor={$linha['a_idAutor']}')>";?><img src="img/deletar.png" style="width: 2.5vw;"></a></td>
         </tr>
 
         <?php } ?>

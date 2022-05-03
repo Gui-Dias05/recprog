@@ -5,8 +5,6 @@
     require_once "classes/Cliente.class.php";
     require_once "classes/Venda.class.php";
 
-
-    
     $acao = isset($_GET['acao']) ? $_GET['acao'] : "";
     if ($acao == "excluir"){
         $v_idVenda = isset($_GET['v_idVenda']) ? $_GET['v_idVenda'] : 0;
@@ -33,7 +31,7 @@
             header("location:indexVenda.php");        
     }
 
-//Consultar dados
+
 function buscarDados($v_idVenda){
     $pdo = Conexao::getInstance();
     $consulta = $pdo->query("SELECT * FROM Venda WHERE v_idVenda = $v_idVenda");
@@ -46,7 +44,7 @@ function buscarDados($v_idVenda){
         $dados['iv_data_venda'] = $linha['iv_data_venda'];
 
     }
-    //var_dump($dados);
+
     return $dados;
 }
 

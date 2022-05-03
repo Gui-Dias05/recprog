@@ -31,7 +31,7 @@
             header("location:indexCliente.php");        
     }
 
-//Consultar dados
+
 function buscarDados($c_idCliente){
     $pdo = Conexao::getInstance();
     $consulta = $pdo->query("SELECT * FROM Cliente WHERE c_idCliente = $c_idCliente");
@@ -43,7 +43,7 @@ function buscarDados($c_idCliente){
         $dados['c_dt_nascimento'] = $linha['c_dt_nascimento'];
 
     }
-    //var_dump($dados);
+
     return $dados;
 }
     

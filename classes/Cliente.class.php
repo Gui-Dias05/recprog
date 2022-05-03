@@ -36,9 +36,6 @@
         public function setData($data) {
                 return $this->c_dt_nascimento = $data;
             }
-            
-        
-
 
         public function inserir() {
             $pdo = Conexao::getInstance();

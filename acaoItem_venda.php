@@ -28,7 +28,7 @@
             header("location:indexItem_venda.php");
         }
    
-    //Consultar dados
+
     function buscarDados($iv_v_idVenda){
         $pdo = Conexao::getInstance();
         $consulta = $pdo->query("SELECT * FROM Item_venda WHERE iv_v_idVenda = $iv_v_idVenda");
@@ -40,7 +40,7 @@
             $dados['iv_valor_total_item'] = $linha['iv_valor_total_item'];
 
         }
-        //var_dump($dados);
+
         return $dados;
     }
 

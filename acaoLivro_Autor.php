@@ -20,23 +20,14 @@
     $acao = isset($_POST['acao']) ? $_POST['acao'] : "";
     if ($acao == "salvar"){
         $la_l_idLivro = isset($_POST['la_l_idLivro']) ? $_POST['la_l_idLivro'] : "";
-        //if ($la_l_idLivro == 0){
-            //if ($update)
+
 
             $livro_autor = new Livro_Autor($_POST['la_l_idLivro'], $_POST['la_a_idAutor']);
             
             $resultado = $livro_autor->inserir();
             header("location:indexLivro_Autor.php");
         }
-    //     else if($acao == "editar"){
-            
-    //         $livro_autor = new Livro_Autor($_POST['la_l_idLivro'], $_POST['la_a_idAutor']);
-    //         $resultado = $livro_autor->editar($la_l_idLivro, $la_a_idAutor);
 
-    //         header("location:indexLivro_Autor.php");        
-    // }
-
-    //Consultar dados
     function buscarDados($la_l_idLivro){
         $pdo = Conexao::getInstance();
         $consulta = $pdo->query("SELECT * FROM Livro_Autor WHERE la_l_idLivro = $la_l_idLivro");
@@ -46,7 +37,6 @@
             $dados['la_a_idAutor'] = $linha['la_a_idAutor'];
 
         }
-        //var_dump($dados);
         return $dados;
     }
 
